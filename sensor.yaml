@@ -1,0 +1,11 @@
+  - platform: nct_evncpc
+    name: 'ngo chau thuan'
+    passwd: '123654'
+
+  - platform: template
+    sensors:
+      nct_evncpc_tiendien:
+        friendly_name: "Tiền Điện"
+        unit_of_measurement: 'vnd'
+        value_template: >-
+          {{ state_attr('sensor.nct_evncpc_sanluong', 'tien_thangnay') }}
